@@ -1,0 +1,25 @@
+Package: coenosr
+Title: Reconstruction of the 1991 COENOS Braun-Blanquet Table-Sorting Method
+Version: 0.0.0.9000
+Authors@R: c(
+    person("K. W.", "Bridges", email = "kim.bridges@gmail.com", role = c("aut", "cre")),
+    person("Claude (Anthropic)", role = "aut"))
+Description: A faithful reconstruction in R of the methodology embodied in the
+    1991 COENOS program, a compiled-Pascal tool for numerical phytosociology in
+    the Braun-Blanquet tradition. COENOS sorts a raw species-by-releve table
+    into a structured two-way table of differential species groups, using
+    inside/outside frequency rules for group formation and reciprocal averaging
+    for ordering. The original source is lost; this package recovers the method
+    so that what COENOS did can be done again, legibly and verifiably, validated
+    against tables the original program produced. This release provides the
+    releve-file reader and the species classification (trim) step; group
+    formation and ordering follow.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/kimbridges/coenosr
+BugReports: https://github.com/kimbridges/coenosr/issues
