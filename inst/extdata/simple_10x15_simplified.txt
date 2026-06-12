@@ -1,0 +1,10 @@
+1,G,L,M,C,U,R,A,P,Y
+2,L,M,C,R,A,P,F,S
+3,C,P,K,V,B,H
+4,L,C,K,H
+5,G,L,M,C,R,A,P,Y,F,S,K,V
+6,G,L,M,C,R,A,P,F,S,V,H
+7,L,C,U,P,S,H
+8,L,P
+9,L,C,A,P,F,S,K,H
+10,G,L,C,A,P,F,K,B,H

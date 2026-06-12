@@ -3,4 +3,6 @@
 S3method(print,coenos_rel)
 export(classify_species)
 export(constancy)
+export(read_2way)
+export(read_lists)
 export(read_rel)

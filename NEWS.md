@@ -7,6 +7,12 @@ First functions of the COENOS reconstruction:
   opaque, first-non-blank cover, duplicate-last-wins, `&&` comments,
   case-sensitivity) and both cover scales. Reads the bundled `DIEREN.REL`,
   `ELLEN.REL`, and `SET1.DAT` (CRLF, numeric covers).
+* `read_lists()` reads the ragged "site, then its species" form (one line per
+  site, variable length) — the natural field/dictation input. Auto-detects
+  cover values, so the same function reads presence/absence and cover data.
+* `read_2way()` reads the wide species-by-sites matrix form (1/0 or covers),
+  with a `transpose` option. All three readers return the same `coenos_rel`
+  object, so the rest of the workflow is identical regardless of input.
 * `constancy()` returns per-species occurrence counts.
 * `classify_species()` performs the COENOS trim step, splitting species into
   `rare` (constancy < 3), `eligible`, and `ubiquitous` (constancy >= floor(2n/3)).

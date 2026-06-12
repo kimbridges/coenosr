@@ -6,8 +6,9 @@
 \alias{coenosr-package}
 \title{coenosr: Reconstruction of the 1991 COENOS Braun-Blanquet table-sorting method}
 \description{
-COENOS (Adolf Ceska, 1991) was a compiled-Pascal program for numerical
-phytosociology in the Braun-Blanquet tradition. It sorted a raw
+COENOS (Ceska & Roemer, 1991) was a compiled-Pascal program for numerical
+phytosociology in the Braun-Blanquet tradition, implementing the table-sorting
+method Ceska & Roemer first published in 1971. It sorted a raw
 species-by-releve table into a structured two-way table of differential
 species groups, forming groups by inside/outside frequency rules and ordering
 them by reciprocal averaging. The original source is lost. \strong{coenosr} is a
@@ -17,19 +18,23 @@ decoded ground-truth oracles).
 }
 \section{Status}{
 
-This release provides the releve-file reader, \code{\link[=read_rel]{read_rel()}}, and the
-\code{\link[=constancy]{constancy()}} helper. Group formation and reciprocal-averaging ordering are
-the next components.
+This release provides the input readers — \code{\link[=read_rel]{read_rel()}} (COENOS files),
+\code{\link[=read_lists]{read_lists()}} (the ragged "site, then its species" form), and \code{\link[=read_2way]{read_2way()}}
+(the wide species-by-sites matrix) — all returning the same \code{coenos_rel}
+object, plus \code{\link[=constancy]{constancy()}} and the trim step \code{\link[=classify_species]{classify_species()}}. Group
+formation and reciprocal-averaging ordering are the next components.
 }
 
 \section{Bundled data}{
 
-\code{inst/extdata} carries two example releve files (\code{DIEREN.REL}, \code{ELLEN.REL})
-and three decoded ground-truth tables
+\code{inst/extdata} carries example relevé files in several forms: the COENOS
+\code{DIEREN.REL}, \code{ELLEN.REL}, and \code{SET1.DAT}, plus a small 15-species x 10-site
+demonstration set in three shapes (\code{simple_10x15_simplified.txt} ragged,
+\code{simple_10x15_input.txt} wide, \code{simple_10x15_cover.txt} ragged with covers).
+Three decoded ground-truth tables
 (\code{dieren_s00_species.csv}, \code{ellen_s00_species.csv}, \code{set1_s00_species.csv})
-giving each species' constancy, role, and group membership as produced by the
-original COENOS run. These are used by the package tests as validation
-oracles.
+give each species' constancy, role, and group membership as produced by the
+original COENOS run, and serve as the test suite's validation oracles.
 }
 
 \seealso{
