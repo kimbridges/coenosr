@@ -43,6 +43,15 @@ test_that("a strong, well-separated group is recovered exactly", {
   expect_true(any(hit))
 })
 
+test_that("the bundled toy dataset sorts into two clean five-species groups", {
+  # the simple_10x15 demo is designed to give a clear two-community result
+  rel <- read_lists(system.file("extdata", "simple_10x15_simplified.txt",
+                                package = "coenosr"))
+  g <- form_groups(rel)
+  expect_length(g, 2)
+  expect_true(all(vapply(g, function(z) length(z$species) == 5L, logical(1))))
+})
+
 test_that("form_groups rejects non-coenos_rel input", {
   expect_error(form_groups(data.frame(a = 1)), "coenos_rel")
 })

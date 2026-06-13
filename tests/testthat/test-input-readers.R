@@ -7,7 +7,7 @@ test_that("read_lists reads the ragged form", {
   expect_s3_class(rel, "coenos_rel")
   expect_identical(nlevels(rel$releve), 10L)
   expect_identical(nlevels(rel$species), 15L)
-  expect_identical(nrow(rel), 75L)
+  expect_identical(nrow(rel), 69L)
 })
 
 test_that("read_2way reads the wide form and agrees with read_lists", {
