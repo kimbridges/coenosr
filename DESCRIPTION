@@ -12,14 +12,16 @@ Description: A faithful reconstruction in R of the methodology embodied in the
     for ordering. The original source is lost; this package recovers the method
     so that what COENOS did can be done again, legibly and verifiably, validated
     against tables the original program produced. This release provides the
-    releve-file reader and the species classification (trim) step; group
-    formation and ordering follow.
+    releve-file readers, the species classification (trim) step, differential
+    group formation, reciprocal-averaging ordering, and the assembled sorted
+    two-way table.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    gt
 Config/testthat/edition: 3
 URL: https://github.com/kimbridges/coenosr
 BugReports: https://github.com/kimbridges/coenosr/issues

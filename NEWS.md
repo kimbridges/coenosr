@@ -17,9 +17,16 @@ First functions of the COENOS reconstruction:
 * `classify_species()` performs the COENOS trim step, splitting species into
   `rare` (constancy < 3), `eligible`, and `ubiquitous` (constancy >= floor(2n/3)).
 * `print.coenos_rel()` summary method.
+* `form_groups()` forms differential species groups: the density-block search of
+  Bruelheide & Flintrop (1994) with the outside criterion of Ceska & Roemer
+  (1971). Deterministic; returns a `coenos_groups` object.
+* `coenos_table()` assembles the sorted two-way table — species by group,
+  relevés ordered by reciprocal averaging, ungrouped species below.
+* `differential_table()` extracts the display-ready differential core as a plain
+  data frame; `coenos_gt()` renders it as a formatted `gt` table in one call.
 
 Validation: `read_rel()` and `classify_species()` are checked against decoded
 `.S00` ground-truth oracles for all three bundled datasets (exact matches).
-
-Still to come: differential group formation (the inside/outside frequency
-engine), reciprocal-averaging ordering, and the sorted two-way table output.
+`form_groups()` reproduces COENOS's strong, well-separated groups exactly and
+its subtler differential groups approximately; the residual is the program's
+unpublished tie-break, documented rather than papered over.
